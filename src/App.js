@@ -5,7 +5,7 @@ import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
 import Clock from "./pages/clock/Clock";
-import SideBar from "./components/sideBar/SideBar"
+import DropDown from "./components/dropDown/DropDown"
 
 class App extends React.Component {
   render() {
@@ -32,7 +32,7 @@ class App extends React.Component {
         />
         <Route
           path="/"
-          component={SideBar}
+          component={DropDown}
           />
       </Switch>
     );

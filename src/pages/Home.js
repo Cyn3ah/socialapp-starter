@@ -1,8 +1,9 @@
 import React from "react";
 import LoginForm from "../components/loginForm/LoginForm";
 import Menu from "../components/menu/Menu";
-import SideBar from "../components/sideBar/SideBar";
+
 import { userIsNotAuthenticated } from "../redux/HOCs";
+import DropDown from "../components/dropDown/DropDown";
 
 class Home extends React.Component {
   render() {
@@ -11,7 +12,7 @@ class Home extends React.Component {
         <Menu />
         <h2>Welcome to Space Squrrels</h2>
         <LoginForm />
-        <SideBar />
+        <DropDown />
       </div>
     );
   }
