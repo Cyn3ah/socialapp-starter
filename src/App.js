@@ -2,7 +2,6 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 
 import Home from "./pages/home/Home";
-// import Menu from "./components/menu/Menu";
 import Profile from "./pages/profile/Profile";
 import NotFound from "./pages/notFound/NotFound";
 import About from "./pages/about/About"
@@ -11,6 +10,8 @@ import Style from "./pages/style/Style";
 import Play from "./pages/play/Play";
 import Meet from "./pages/meet/Meet"
 import Logoff from "./pages/logoff/Logoff";
+
+
 
 class App extends React.Component {
   render() {
@@ -33,6 +34,7 @@ class App extends React.Component {
             path="/about"
             component={About}
           />
+           
           <Route
             exact
             path="/visit"
@@ -63,6 +65,8 @@ class App extends React.Component {
             path="*"
             component={NotFound}
           />
+          
+            
         </Switch>
 
       </div>

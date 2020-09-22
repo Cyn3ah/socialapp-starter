@@ -7,6 +7,13 @@ class socialAppService {
     this.client = client;
     }
 
+    getRecentMessage() {
+        return this.client.get(this.url + "/messages?limit=20")
+        .then(responed => {
+            console.log(responed)
+        })
+    }
+
     registerUser(userData) {
         return this.client.post(this.url + "/users", userData);
     }
