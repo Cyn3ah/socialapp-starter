@@ -14,19 +14,20 @@ class socialAppService {
 
     getUsername () {
      const loginData = JSON.parse(localStorage.getItem("login"))
-     const { username, token } = loginData.result
+     const { username } = loginData.result
      
      return username
     }
-    gotToken () {
+    getToken () {
         
-        const { username, token } =  store.getState().auth.logan.result
+        const { token } =  store.getState().auth.login.result
         return token
         
     }
   
     getRecentMessage() {
-        return this.client.get(this.url + "/messages?limit=20")
+        return this.client
+        .get(this.url + "/messages?limit=20")
         .then(responed => {
             return responed.data.messages
         })
@@ -36,7 +37,7 @@ class socialAppService {
        const requestBody = { messageId}
        const config = {
            headers: {
-               Authorization: `Bearer ${this.gotToken()}`
+               Authorization: `Bearer ${this.getToken()}`
            }
        }
      return this.client
@@ -56,4 +57,4 @@ class socialAppService {
     }
 }
 
-export default socialAppService
+export default socialAppService;

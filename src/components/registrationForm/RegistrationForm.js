@@ -2,7 +2,7 @@ import React from "react";
 import "./RegistrationForm.css";
 import Spinner from "react-spinkit";
 
-import socialAppService from "../../socialAppService";
+import SocialAppService from "../../socialAppService";
 
 class RegistrationForm extends React.Component {
   constructor(props) {
@@ -13,7 +13,7 @@ class RegistrationForm extends React.Component {
       password: "",
       displayName: "",
     };
-    this.client = new socialAppService();
+    this.client = new SocialAppService();
   }
 
   handleRegistration = e => {
