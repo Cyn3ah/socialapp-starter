@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { store } from "./redux"
 
 class socialAppService {
 
@@ -7,12 +8,44 @@ class socialAppService {
     this.client = client;
     }
 
+    getLoginData(){
+        return store.getState().auth.login.result
+    }
+
+    getUsername () {
+     const loginData = JSON.parse(localStorage.getItem("login"))
+     const { username, token } = loginData.result
+     
+     return username
+    }
+    gotToken () {
+        
+        const { username, token } =  store.getState().auth.logan.result
+        return token
+        
+    }
+  
     getRecentMessage() {
         return this.client.get(this.url + "/messages?limit=20")
         .then(responed => {
-            console.log(responed)
+            return responed.data.messages
         })
     }
+
+   postLike(messageId) {
+       const requestBody = { messageId}
+       const config = {
+           headers: {
+               Authorization: `Bearer ${this.gotToken()}`
+           }
+       }
+     return this.client
+       .post(this.url + "/likes", requestBody, config)
+       .then(response => response.data.like)
+       
+   }
+
+
 
     registerUser(userData) {
         return this.client.post(this.url + "/users", userData);
