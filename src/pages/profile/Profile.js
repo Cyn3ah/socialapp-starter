@@ -8,7 +8,6 @@ import "./Profile.css";
 
 
 
-
 class Profile extends React.Component {
 
 
@@ -17,15 +16,9 @@ class Profile extends React.Component {
       <div className="profile">
         <Menu isAuthenticated={this.props.isAuthenticated} />
 
-
-
         <SideBar isAuthenticated={this.props.isAuthenticated} />
 
-
-
-
         <FootNavBar isAuthenticated={this.props.isAuthenticated} />
-
 
 
       </div>

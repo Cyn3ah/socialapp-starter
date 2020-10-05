@@ -6,6 +6,12 @@ import UploadImage from "../addPhoto/AddPhoto";
 import EditProfile from "../editProfile/EditProfile";
 import SocialAppService from "../../socialAppService";
 import "./SideBar.css";
+<<<<<<< HEAD
+import socialAppService from '../../socialAppService';
+
+
+=======
+>>>>>>> bc3fe92bc55cef3bdee0053de423364c7d8d9bcb
 
 class SideBar extends React.Component {
     constructor(props) {
@@ -17,22 +23,7 @@ class SideBar extends React.Component {
         this.client = new SocialAppService()
     }
 
-    // componentDidMount() {
-    //     this.getUserDetails();
-    // }
-
-    // getUserDetails = (e) => {
-    //     this.client.getUser(this.state).then(response => {
-    //         this.setState({
-
-    //             displayName: response.data.user.displayName,
-
-    //         })
-    //         console.log(response);
-    //     });
-
-    // }
-
+ 
     render() {
         return (
             <Grid colums={1}>
@@ -83,38 +74,5 @@ class SideBar extends React.Component {
 export default SideBar
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React from "react";
-// import Clock from "../../pages/clock/Clock";
-// import { withAsyncAction } from "../../redux/HOCs";
-
-
-// export class SideBar extends React.Component {
-//     render() {
-
-
-//         return (
-//             <div>
-//                 <Clock isAuthenticated={this.props.isAuthenticated} />
-
-//             </div>
-//         );
-//     }
-
-// }
-
-// export default withAsyncAction("auth", "login")(SideBar);
 
 
